@@ -16062,6 +16062,11 @@ button, select, input, textarea, li, div, p, h1, h2, h3, h4, h5, h6 {
   }
 }
 
+.new-wrapper .container {
+  max-width: 1520px;
+  width: calc(100% - 40px);
+}
+
 @media screen and (max-width: 993px) {
   .faculties-home.academic-home .faculties-home_in {
     display: flex;
@@ -16366,6 +16371,50 @@ button, select, input, textarea, li, div, p, h1, h2, h3, h4, h5, h6 {
 @media screen and (max-width: 480px) {
   .faculties-top {
     margin-top: 60px;
+  }
+}
+.faculties-top__swp .swiper-wrapper {
+  align-items: stretch;
+}
+.faculties-top__swp .swiper-slide {
+  height: auto;
+}
+@media screen and (max-width: 1024px) {
+  .faculties-top__swp .swiper-slide {
+    width: 320px;
+  }
+}
+.faculties-top__swp .swiper-slide .management_card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.faculties-top__swp .swiper-slide .management_card img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1/1;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.faculties-top__swp .swiper-slide .management_card-text {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+}
+.faculties-top__swp .swiper-slide .management_card-text h3 {
+  margin-bottom: 20px;
+}
+.faculties-top__swp .swiper-slide .management_card-text p {
+  min-height: inherit;
+}
+.faculties-top__swp .management_swiper-btns {
+  display: none;
+}
+@media screen and (max-width: 1024px) {
+  .faculties-top__swp .management_swiper-btns {
+    display: flex;
   }
 }
 
@@ -16907,7 +16956,7 @@ button, select, input, textarea, li, div, p, h1, h2, h3, h4, h5, h6 {
 .department-program * {
   font-family: "Noah", sans-serif;
 }
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 1100px) {
   .department-program .program-card {
     width: 100%;
     order: 1;
@@ -17129,11 +17178,6 @@ button, select, input, textarea, li, div, p, h1, h2, h3, h4, h5, h6 {
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
-@media screen and (max-width: 1700px) {
-  .academic-rector .swiper-wrapper {
-    grid-template-columns: repeat(1, 1fr);
-  }
-}
 @media screen and (max-width: 1500px) {
   .academic-rector .swiper-wrapper {
     grid-template-columns: repeat(2, 1fr);
@@ -17145,13 +17189,68 @@ button, select, input, textarea, li, div, p, h1, h2, h3, h4, h5, h6 {
     gap: 0;
   }
 }
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1440px) {
   .academic-rector .swiper-slide {
     width: 320px;
+  }
+}
+@media screen and (max-width: 1400px) {
+  .academic-rector .swiper-slide .leader-card {
+    width: 320px;
+  }
+}
+@media screen and (max-width: 1400px) {
+  .academic-rector .swiper-slide .leader-card__left {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 1400px) {
+  .academic-rector .swiper-slide .leader-card__left-text {
+    padding: 16px 20px;
+  }
+}
+@media screen and (max-width: 1400px) {
+  .academic-rector .swiper-slide .leader-card__left .btn-white {
+    display: flex;
+  }
+}
+@media screen and (max-width: 1400px) {
+  .academic-rector .swiper-slide .leader-card__right {
+    display: none;
   }
 }
 @media screen and (min-width: 1400px) {
   .academic-rector .swp-navigation {
     display: none;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .faculties-help .help-card {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 1100px) {
+  .faculties-help .help-card h3, .faculties-help .help-card p {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .faculties_figures .figures-card ul {
+    overflow: visible;
+  }
+}
+.faculties_figures .figures-card .last-card {
+  box-shadow: 0 4px 21px 0 rgba(9, 12, 31, 0.1);
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+@media screen and (max-width: 650px) {
+  .faculties_figures .figures-card .last-card .main-img {
+    height: 117px;
   }
 }/*# sourceMappingURL=style.css.map */

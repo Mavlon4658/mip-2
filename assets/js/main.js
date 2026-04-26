@@ -880,87 +880,82 @@ const workProgramSwp = new Swiper('.work-program__swp', {
 // -------------- faculties js -------------- //
 
 const mamagementSwiper = new Swiper(".management_swiper", {
-  slidesPerView: "auto",
-  spaceBetween: 10,
-  slidesPerView: 1.1,
-  breakpoints: {
-    768: {
-      slidesPerView: 2.2,
-      spaceBetween: 20,
+    slidesPerView: "auto",
+    spaceBetween: 10,
+    breakpoints: {
+        1024: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+        },
     },
-    1200: {
-      slidesPerView: 3,
-      spaceBetween: 20,
+    navigation: {
+        nextEl: ".management_swiper-btns .btn-right",
+        prevEl: ".management_swiper-btns .btn-left",
     },
-  },
-  navigation: {
-    nextEl: ".btn-right",
-    prevEl: ".btn-left",
-  },
 });
 
 const academicCouncilSwiper = new Swiper(".academic_council_swiper", {
-  slidesPerView: "auto",
-  spaceBetween: 10,
-  slidesPerView: 1.1,
-  breakpoints: {
-    768: {
-      slidesPerView: 2.4,
-      spaceBetween: 20,
+    slidesPerView: "auto",
+    spaceBetween: 10,
+    slidesPerView: 1.1,
+    breakpoints: {
+        768: {
+            slidesPerView: 2.4,
+            spaceBetween: 20,
+        },
+        1200: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+        },
     },
-    1200: {
-      slidesPerView: 3,
-      spaceBetween: 20,
+    navigation: {
+        nextEl: ".academic-right",
+        prevEl: ".academic-left",
     },
-  },
-  navigation: {
-    nextEl: ".academic-right",
-    prevEl: ".academic-left",
-  },
 });
 
 const initFacultiesSlider = () => {
-  const section = document.querySelector(
-    ".faculties_slider .faculties-divisions_in",
-  );
+    const section = document.querySelector(
+        ".faculties_slider .faculties-divisions_in",
+    );
 
-  if (!section) return;
+    if (!section) return;
 
-  if (window.innerWidth <= 993) {
-    if (!section.classList.contains("swiper-initialized")) {
-      section.classList.add("swiper", "faculties-swiper");
+    if (window.innerWidth <= 993) {
+        if (!section.classList.contains("swiper-initialized")) {
+            section.classList.add("swiper", "faculties-swiper");
 
-      const wrapper = document.createElement("div");
-      wrapper.classList.add("swiper-wrapper");
+            const wrapper = document.createElement("div");
+            wrapper.classList.add("swiper-wrapper");
 
-      const items = section.querySelectorAll(".faculties-divisions_block");
-      items.forEach((item) => {
-        item.classList.add("swiper-slide");
-        wrapper.appendChild(item);
-      });
+            const items = section.querySelectorAll(".faculties-divisions_block");
+            items.forEach((item) => {
+                item.classList.add("swiper-slide");
+                wrapper.appendChild(item);
+            });
 
-      section.appendChild(wrapper);
+            section.appendChild(wrapper);
 
-      new Swiper(".faculties-swiper", {
-        slidesPerView: 1.1,
-        spaceBetween: 10,
-        breakpoints: {
-            768: {
-                slidesPerView: 2.4,
-                spaceBetween: 20,
-            },
-            },
-        navigation: {
-            nextEl: ".divisions-right",
-            prevEl: ".divisions-left",
-        },
-    });
+            new Swiper(".faculties-swiper", {
+                slidesPerView: 1.1,
+                spaceBetween: 10,
+                breakpoints: {
+                    768: {
+                        slidesPerView: 2.4,
+                        spaceBetween: 20,
+                    },
+                },
+                navigation: {
+                    nextEl: ".divisions-right",
+                    prevEl: ".divisions-left",
+                },
+            });
+        }
+    } else {
+        if (section.classList.contains("swiper")) {
+            location.reload();
+        }
     }
-  } else {
-    if (section.classList.contains("swiper")) {
-      location.reload();
-    }
-  }
 };
 
 window.addEventListener("load", initFacultiesSlider);
@@ -970,22 +965,22 @@ if (document.querySelector('.academic-rector')) {
     let academicRectorInit = false;
     let academicRectorSwp;
     function academicRectorFunction() {
-      if (window.innerWidth <= 1400) {
-        if (!academicRectorInit) {
-          academicRectorInit = true;
-          academicRectorSwp = new Swiper(".academic-rector__list .swiper", {
-            slidesPerView: "auto",
-            spaceBetween: 20,
-            navigation: {
-                nextEl: '.academic-rector .swp-next',
-                prevEl: '.academic-rector .swp-prev',
+        if (window.innerWidth <= 1400) {
+            if (!academicRectorInit) {
+                academicRectorInit = true;
+                academicRectorSwp = new Swiper(".academic-rector__list .swiper", {
+                    slidesPerView: "auto",
+                    spaceBetween: 20,
+                    navigation: {
+                        nextEl: '.academic-rector .swp-next',
+                        prevEl: '.academic-rector .swp-prev',
+                    }
+                });
             }
-          });
+        } else if (academicRectorInit) {
+            academicRectorSwp.destroy();
+            academicRectorInit = false;
         }
-      } else if (academicRectorInit) {
-        academicRectorSwp.destroy();
-        academicRectorInit = false;
-      }
     }
     academicRectorFunction();
     window.addEventListener("resize", academicRectorFunction);

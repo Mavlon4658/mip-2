@@ -30,6 +30,11 @@
   }
 }
 
+.new-wrapper .container {
+  max-width: 1520px;
+  width: calc(100% - 40px);
+}
+
 // faculties
 .faculties-home {
 
@@ -342,6 +347,62 @@
 
   @include media(480) {
     margin-top: 60px;
+  }
+
+  &__swp {
+    .swiper {
+      &-wrapper {
+        align-items: stretch;
+      }
+
+      &-slide {
+        height: auto;
+
+        @include media(1024) {
+          width: 320px;
+        }
+
+        .management {
+          &_card {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            
+
+            img {
+              width: 100%;
+              height: auto;
+              aspect-ratio: 1 / 1;
+              object-fit: cover;
+            }
+
+            &-text {
+              height: 100%;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              gap: 20px;
+
+              h3 {
+                margin-bottom: 20px;
+              }
+
+              p {
+                min-height: inherit;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .management_swiper-btns {
+      display: none;
+
+      @include media(1024) {
+        display: flex;
+      }
+    }
   }
 }
 
@@ -920,7 +981,7 @@
 
   .program {
     &-card {
-      @include media(700) {
+      @include media(1100) {
         width: 100%;
         order: 1
       }
@@ -1161,7 +1222,7 @@
       gap: 20px;
 
       @include media(1700) {
-        grid-template-columns: repeat(1, 1fr);
+        // grid-template-columns: repeat(1, 1fr);
       }
 
       @include media(1500) {
@@ -1175,8 +1236,38 @@
     }
 
     &-slide {
-      @include media(1100) {
+      @include media(1440) {
         width: 320px;
+      }
+
+      .leader-card {
+        @include media(1400) {
+          width: 320px;
+        }
+
+        &__left {
+          @include media(1400) {
+            width: 100%;
+          }
+
+          &-text {
+            @include media(1400) {
+              padding: 16px 20px;
+            }
+          }
+
+          .btn-white {
+            @include media(1400) {
+              display: flex;
+            }
+          }
+        }
+
+        &__right {
+          @include media(1400) {
+            display: none;
+          }
+        }
       }
     }
   }
@@ -1188,3 +1279,42 @@
   }
 }
 // Academic rector end
+
+.faculties-help {
+  .help {
+    &-card {
+      @include media(1100) {
+        width: 100%;
+      }
+
+      h3, p {
+        @include media(1100) {
+          max-width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.faculties_figures .figures-card {
+  ul {
+    @include media(650) {
+      overflow: visible;
+    }
+  }
+
+  .last-card {
+    box-shadow: 0 4px 21px 0 rgba(9, 12, 31, 0.1);
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  
+    .main-img {
+      @include media(650) {
+        height: 117px;
+      }
+    }
+  }
+}
